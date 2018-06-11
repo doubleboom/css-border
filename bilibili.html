@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SVG奇思妙想</title>
+  <style>
+    .g-rect-path {
+      fill: none;
+      stroke-width: 10;
+      stroke: #d3dce6;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    .g-rect-fill {
+      fill: none;
+      stroke-width: 10;
+      stroke: #10A5D7;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      stroke-dasharray: 0, 1370;
+      stroke-dashoffset: 0;
+      animation: lineMove 2s ease-out infinite;
+    }
+
+    .g-rect-circle {
+      fill: #10A5D7;
+      opacity: 0;
+      animation: dotAnimation 2s ease-out infinite;
+    }
+
+    @keyframes dotAnimation {
+      50% {
+        opacity: 0;
+      }
+      67% {
+        opacity: 1;
+      }
+      83% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes lineMove {
+      0% {
+        stroke-dasharray: 0, 1350;
+      }
+      100% {
+        stroke-dasharray: 1350, 1350;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <svg width="250" height="250" viewbox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+    <g>
+      <polyline points="60 25,110 75,10 75,10 175,210 175,210 75,110 75,180 25" class="g-rect-fill" />
+      <circle cx="60" cy="120" r="10" class="g-rect-circle" />
+      <circle cx="110" cy="120" r="10" class="g-rect-circle" />
+      <circle cx="160" cy="120" r="10" class="g-rect-circle" />
+      <!-- <polyline points="5 5, 575 5, 575 200, 5 200" class="g-rect-fill" />
+      <path id="svg_3" d="M200,300 C130,200 V80 H300 V180 H200 c130,200" fill-opacity="null" stroke-opacity="null" stroke-width="15"
+        stroke-linecap="round" stroke="#000" fill="black" /> -->
+    </g>
+  </svg>
+</body>
